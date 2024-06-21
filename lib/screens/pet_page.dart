@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/theme/color.dart';
-import 'package:pet_app/utils/data.dart';
-import 'package:pet_app/widgets/search_box.dart'; // Widget de busca
-import 'package:pet_app/widgets/category_card.dart'; // Widget de categoria
-import 'package:pet_app/widgets/pet_card.dart'; // Widget de pets
+import 'package:pet_rescue/theme/color.dart';
+import 'package:pet_rescue/utils/data.dart';
+import 'package:pet_rescue/widgets/search_box.dart'; // Widget de busca
+import 'package:pet_rescue/widgets/category_card.dart'; // Widget de categoria
+import 'package:pet_rescue/widgets/pet_card.dart'; // Widget de pets
 
 class PetsPage extends StatefulWidget {
   const PetsPage({Key? key}) : super(key: key);

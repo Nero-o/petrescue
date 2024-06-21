@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/utils/data.dart';
-import 'package:pet_app/widgets/settings_list_box.dart';
+import 'package:pet_rescue/utils/data.dart';
+import 'package:pet_rescue/widgets/settings_list_box.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/utils/data.dart';
-import 'package:pet_app/widgets/chat_item.dart';
-import 'package:pet_app/widgets/custom_textbox.dart';
+import 'package:pet_rescue/utils/data.dart';
+import 'package:pet_rescue/widgets/chat_item.dart';
+import 'package:pet_rescue/widgets/custom_textbox.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);

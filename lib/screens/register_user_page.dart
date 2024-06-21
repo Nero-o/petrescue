@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/utils/local_database.dart';
+import 'package:pet_rescue/utils/local_database.dart';
 
 class RegisterUserPage extends StatefulWidget {
   @override

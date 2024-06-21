@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/screens/register_user_page.dart';
+import 'package:pet_rescue/screens/register_user_page.dart';
 
 var profile = "";
 

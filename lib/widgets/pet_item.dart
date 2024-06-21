@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
-import 'package:pet_app/theme/color.dart';
-import 'package:pet_app/widgets/favorite_box.dart';
+import 'package:pet_rescue/theme/color.dart';
+import 'package:pet_rescue/widgets/favorite_box.dart';
 
 import 'custom_image.dart';
 

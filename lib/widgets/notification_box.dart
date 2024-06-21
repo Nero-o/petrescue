@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pet_app/theme/color.dart';
+import 'package:pet_rescue/theme/color.dart';
 
 class NotificationBox extends StatelessWidget {
   const NotificationBox({

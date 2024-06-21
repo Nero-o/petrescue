@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/theme/color.dart';
+import 'package:pet_rescue/theme/color.dart';
 
 class SettingItemBox extends StatelessWidget {
   final IconData icon;

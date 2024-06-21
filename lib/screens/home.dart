@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:pet_app/theme/color.dart';
-import 'package:pet_app/utils/data.dart';
-import 'package:pet_app/widgets/category_item.dart';
-import 'package:pet_app/widgets/notification_box.dart';
-import 'package:pet_app/widgets/pet_item.dart';
+import 'package:pet_rescue/theme/color.dart';
+import 'package:pet_rescue/utils/data.dart';
+import 'package:pet_rescue/widgets/category_item.dart';
+import 'package:pet_rescue/widgets/notification_box.dart';
+import 'package:pet_rescue/widgets/pet_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

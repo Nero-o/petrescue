@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/screens/chat.dart';
-import 'package:pet_app/screens/home.dart';
-import 'package:pet_app/screens/pet_page.dart'; // Importar a nova página de pets
-import 'package:pet_app/screens/settings.dart'; // Importar a nova página de configurações
-import 'package:pet_app/theme/color.dart';
-import 'package:pet_app/utils/constant.dart';
-import 'package:pet_app/widgets/bottombar_item.dart';
+import 'package:pet_rescue/screens/chat.dart';
+import 'package:pet_rescue/screens/home.dart';
+import 'package:pet_rescue/screens/pet_page.dart'; // Importar a nova página de pets
+import 'package:pet_rescue/screens/settings.dart'; // Importar a nova página de configurações
+import 'package:pet_rescue/theme/color.dart';
+import 'package:pet_rescue/utils/constant.dart';
+import 'package:pet_rescue/widgets/bottombar_item.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
