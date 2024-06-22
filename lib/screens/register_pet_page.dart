@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_rescue/utils/local_database.dart';
+import 'package:pet_rescue/theme/color.dart'; 
 
 class RegisterPetPage extends StatefulWidget {
   @override
@@ -18,7 +19,9 @@ class _RegisterPetPageState extends State<RegisterPetPage> {
       List<Map<String, dynamic>> pets = await LocalDatabase.loadData('pets');
       pets.add({"name": _name, "age": _age, "location": _location});
       await LocalDatabase.saveData('pets', pets);
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Pet cadastrado com sucesso!')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Pet cadastrado com sucesso!')),
+      );
       Navigator.pop(context);
     }
   }
@@ -26,34 +29,104 @@ class _RegisterPetPageState extends State<RegisterPetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Cadastro de Pet')),
-      body: Padding(
+      appBar: AppBar(
+        title: Text('Cadastro de Pet'),
+        backgroundColor: AppColor.primary,
+      ),
+      backgroundColor: AppColor.appBgColor, // Definir a cor de fundo
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Nome'),
-                validator: (value) => value?.isEmpty ?? true ? 'Insira o nome do pet' : null,
-                onSaved: (value) => _name = value ?? '',
+              Text(
+                'Insira os detalhes do pet',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: AppColor.textColor,
+                ),
               ),
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Idade'),
-                validator: (value) => value?.isEmpty ?? true ? 'Insira a idade do pet' : null,
-                onSaved: (value) => _age = value ?? '',
+              const SizedBox(height: 20),
+              _buildTextField(
+                label: 'Nome',
+                onSave: (value) => _name = value ?? '',
+                validator: (value) => value?.isEmpty ?? true
+                    ? 'Insira o nome do pet'
+                    : null,
               ),
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Localização'),
-                validator: (value) => value?.isEmpty ?? true ? 'Insira a localização' : null,
-                onSaved: (value) => _location = value ?? '',
+              const SizedBox(height: 20),
+              _buildTextField(
+                label: 'Idade',
+                onSave: (value) => _age = value ?? '',
+                validator: (value) => value?.isEmpty ?? true
+                    ? 'Insira a idade do pet'
+                    : null,
               ),
-              SizedBox(height: 20),
-              ElevatedButton(onPressed: _registerPet, child: Text('Cadastrar')),
+              const SizedBox(height: 20),
+              _buildTextField(
+                label: 'Localização',
+                onSave: (value) => _location = value ?? '',
+                validator: (value) => value?.isEmpty ?? true
+                    ? 'Insira a localização'
+                    : null,
+              ),
+              const SizedBox(height: 30),
+              Center(
+                child: ElevatedButton(
+                  onPressed: _registerPet,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 40,
+                      vertical: 15,
+                    ), backgroundColor: AppColor.primary, // Cor do botão
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: Text(
+                    'Cadastrar',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTextField({
+    required String label,
+    required FormFieldSetter<String> onSave,
+    required FormFieldValidator<String> validator,
+  }) {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(
+          color: AppColor.textColor,
+          fontSize: 16,
+        ),
+        filled: true,
+        fillColor: AppColor.textBoxColor,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide.none,
+        ),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 15,
+          vertical: 15,
+        ),
+      ),
+      validator: validator,
+      onSaved: onSave,
     );
   }
 }

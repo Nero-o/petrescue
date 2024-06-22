@@ -73,18 +73,13 @@ class _SettingPageState extends State<SettingPage> {
     return ListView(
       padding: EdgeInsets.all(10),
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(), // Previne scroll duplicado
+      physics: NeverScrollableScrollPhysics(), 
       children: List.generate(
         settings.length,
         (index) => SettingItemBox(
           icon: settings[index]["icon"],
           title: settings[index]["title"],
-          onTap: () {
-            final action = settings[index]["action"];
-            if (action != null) {
-              action(context);
-            }
-          },
+          onTap: () => settings[index]["action"](context), // Atualize para incluir o contexto
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_rescue/screens/register_user_page.dart';
+import 'package:pet_rescue/screens/register_pet_page.dart';
 
 var profile = "";
 
@@ -48,12 +48,12 @@ List settings = [
     },
   },
   {
-    "icon": Icons.person_add,
-    "title": "Cadastro de Usuário",
+    "icon": Icons.pets,
+    "title": "Cadastro de Pet",
     "action": (BuildContext context) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => RegisterUserPage()),
+        MaterialPageRoute(builder: (context) => RegisterPetPage()),
       );
     },
   },
